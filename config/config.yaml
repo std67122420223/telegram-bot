@@ -4,7 +4,7 @@ exchanges:
     secret: ""
 
 bot:
-  symbol: "XAUUSD"
+  symbol: "XAUUSDT"
   timeframe: "1m"
   scan_interval_seconds: 60
 

@@ -9,6 +9,6 @@ bot:
   scan_interval_seconds: 60
 
 strategy:
-  sl_pips: 700
-  tp_pips: 1500
+  sl_pips: 800
+  tp_pips: 1600
   score_threshold: 8

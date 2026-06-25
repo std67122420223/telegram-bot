@@ -1,58 +1,14 @@
-system:
-  mode: "LIVE"
-  max_workers: 8
-  auto_restart: true
-  vps_optimized: true
+exchanges:
+  bybit:
+    apiKey: ""
+    secret: ""
 
-assets:
-  forex: ["EURUSD", "GBPUSD"]
-  gold: ["XAUUSD"]
-  crypto: ["BTC/USDT", "ETH/USDT"]
+bot:
+  symbol: "XAUUSD"
+  timeframe: "1m"
+  scan_interval_seconds: 60
 
-timeframes: ["M1", "M5", "M15", "H1", "H4", "D1"]
-
-strategies:
-  smc_engine:
-    enabled: true
-    use_fvg: true
-    use_order_block: true
-    use_liquidity_grab: true
-    use_bos_choch: true
-  ml_filter:
-    enabled: true
-    model_type: "xgboost"
-    probability_threshold: 0.65
-
-filters:
-  spread_filter:
-    max_spread_pip: 2.0
-  slippage_protection:
-    max_slippage_pct: 0.05
-  trading_sessions:
-    london: { start: "08:00", end: "16:00" }
-    new_york: { start: "13:00", end: "21:00" }
-  economic_calendar:
-    block_high_impact_news: true
-    buffer_minutes_before: 30
-    buffer_minutes_after: 30
-
-risk_management:
-  mode: "risk_pct"
-  risk_percentage: 1.0
-  max_daily_loss_pct: 3.0
-  max_drawdown_pct: 10.0
-  max_consecutive_losses: 5
-  daily_profit_target_pct: 5.0
-
-trade_management:
-  trailing_stop:
-    enabled: true
-    activation_pips: 15.0
-    step_pips: 5.0
-  breakeven:
-    enabled: true
-    trigger_pips: 10.0
-  partial_close:
-    enabled: true
-    tp1_pct: 50.0
-    tp1_ratio: 1.5
+strategy:
+  sl_pips: 700
+  tp_pips: 1500
+  score_threshold: 8
